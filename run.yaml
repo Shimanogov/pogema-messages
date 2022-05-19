@@ -1,0 +1,14 @@
+container:
+  image: "pogema-sf:latest"
+  command: 'python training_run.py --config_path configs/debug.yaml'
+  tty: True
+  environment:
+    - "WANDB_API_KEY=a84a3dc5937d51c3574beeb1ab757882c806d6b0"
+    - "NVIDIA_VISIBLE_DEVICES=1"
+code:
+  folder: "."
+
+host_config:
+  runtime: nvidia
+  shm_size: 4g
+  mem_limit: 8g
